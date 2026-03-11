@@ -1,24 +1,40 @@
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/snippets';
 
-type SnippetType = 'link' | 'note' | 'command';
+export type SnippetType = 'link' | 'note' | 'command';
 
-export type Snippet = {
+export interface Snippet {
   _id: string;
   title: string;
   content: string;
   tags: string[];
   type: SnippetType;
   createdAt: string;
-};
+}
 
-type GetSnippetsParams = {
+export interface SnippetPayload {
+  title: string;
+  content: string;
+  tags: string[];
+  type: SnippetType;
+}
+
+export interface GetSnippetsParams {
   q?: string;
   tag?: string;
   page?: number;
   limit?: number;
-};
+}
 
-export async function getSnippets(params?: GetSnippetsParams) {
+export interface GetSnippetsResponse {
+  data: Snippet[];
+  total: number;
+  page: number;
+  limit: number;
+}
+
+export async function getSnippets(
+  params?: GetSnippetsParams,
+): Promise<GetSnippetsResponse> {
   const searchParams = new URLSearchParams();
 
   if (params?.q) searchParams.append('q', params.q);
@@ -34,10 +50,12 @@ export async function getSnippets(params?: GetSnippetsParams) {
     throw new Error('Failed to fetch snippets');
   }
 
-  return res.json();
+  const data = (await res.json()) as GetSnippetsResponse;
+
+  return data;
 }
 
-export async function getSnippet(id: string) {
+export async function getSnippet(id: string): Promise<Snippet> {
   const res = await fetch(`${API_URL}/${id}`, {
     cache: 'no-store',
   });
@@ -46,10 +64,51 @@ export async function getSnippet(id: string) {
     throw new Error('Failed to fetch snippet');
   }
 
-  return res.json();
+  const data = (await res.json()) as Snippet;
+
+  return data;
 }
 
-export async function deleteSnippet(id: string) {
+export async function createSnippet(payload: SnippetPayload): Promise<Snippet> {
+  const res = await fetch(API_URL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  });
+
+  if (!res.ok) {
+    throw new Error('Failed to create snippet');
+  }
+
+  const data = (await res.json()) as Snippet;
+
+  return data;
+}
+
+export async function updateSnippet(
+  id: string,
+  payload: SnippetPayload,
+): Promise<Snippet> {
+  const res = await fetch(`${API_URL}/${id}`, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  });
+
+  if (!res.ok) {
+    throw new Error('Failed to update snippet');
+  }
+
+  const data = (await res.json()) as Snippet;
+
+  return data;
+}
+
+export async function deleteSnippet(id: string): Promise<{ success: boolean }> {
   const res = await fetch(`${API_URL}/${id}`, {
     method: 'DELETE',
   });
@@ -58,50 +117,7 @@ export async function deleteSnippet(id: string) {
     throw new Error('Failed to delete snippet');
   }
 
-  return res.json();
-}
+  const data = (await res.json()) as { success: boolean };
 
-export async function updateSnippet(
-  id: string,
-  data: {
-    title: string;
-    content: string;
-    tags: string[];
-    type: SnippetType;
-  },
-) {
-  const res = await fetch(`${API_URL}/${id}`, {
-    method: 'PATCH',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data),
-  });
-
-  if (!res.ok) {
-    throw new Error('Failed to update snippet');
-  }
-
-  return res.json();
-}
-
-export async function createSnippet(data: {
-  title: string;
-  content: string;
-  tags: string[];
-  type: SnippetType;
-}) {
-  const res = await fetch(API_URL, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data),
-  });
-
-  if (!res.ok) {
-    throw new Error('Failed to create snippet');
-  }
-
-  return res.json();
+  return data;
 }

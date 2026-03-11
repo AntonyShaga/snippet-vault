@@ -21,7 +21,12 @@ export default function SnippetItem({ snippet }: Props) {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  const date = new Intl.DateTimeFormat('en-CA').format(new Date(snippet.createdAt));
+  const parsedDate = snippet.createdAt ? new Date(snippet.createdAt) : null;
+
+  const date =
+    parsedDate && !Number.isNaN(parsedDate.getTime())
+      ? new Intl.DateTimeFormat('en-CA').format(parsedDate)
+      : 'No date';
 
   async function handleDelete() {
     const ok = confirm('Delete this snippet?');

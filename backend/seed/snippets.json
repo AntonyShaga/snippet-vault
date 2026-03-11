@@ -3,90 +3,120 @@
     "title": "React useEffect example",
     "content": "useEffect(() => { console.log('Component mounted') }, [])",
     "tags": ["react", "hooks"],
-    "type": "note"
+    "type": "note",
+    "createdAt": "2024-01-12T09:21:00.000Z",
+    "updatedAt": "2024-01-12T09:21:00.000Z"
   },
   {
     "title": "React useState example",
     "content": "const [count, setCount] = useState(0)",
     "tags": ["react", "hooks"],
-    "type": "note"
+    "type": "note",
+    "createdAt": "2024-02-03T11:10:00.000Z",
+    "updatedAt": "2024-02-03T11:10:00.000Z"
   },
   {
     "title": "Git reset hard",
     "content": "git reset --hard HEAD",
     "tags": ["git"],
-    "type": "command"
+    "type": "command",
+    "createdAt": "2023-11-15T14:33:00.000Z",
+    "updatedAt": "2023-11-15T14:33:00.000Z"
   },
   {
     "title": "Git undo last commit",
     "content": "git reset --soft HEAD~1",
     "tags": ["git"],
-    "type": "command"
+    "type": "command",
+    "createdAt": "2023-12-01T16:12:00.000Z",
+    "updatedAt": "2023-12-01T16:12:00.000Z"
   },
   {
     "title": "Install NestJS CLI",
     "content": "npm i -g @nestjs/cli",
     "tags": ["nestjs", "npm"],
-    "type": "command"
+    "type": "command",
+    "createdAt": "2024-03-18T08:45:00.000Z",
+    "updatedAt": "2024-03-18T08:45:00.000Z"
   },
   {
     "title": "Create new NestJS project",
     "content": "nest new project-name",
     "tags": ["nestjs"],
-    "type": "command"
+    "type": "command",
+    "createdAt": "2024-04-09T10:05:00.000Z",
+    "updatedAt": "2024-04-09T10:05:00.000Z"
   },
   {
     "title": "Useful CSS tricks",
     "content": "https://css-tricks.com/",
     "tags": ["css", "frontend"],
-    "type": "link"
+    "type": "link",
+    "createdAt": "2024-05-22T13:17:00.000Z",
+    "updatedAt": "2024-05-22T13:17:00.000Z"
   },
   {
     "title": "Next.js documentation",
     "content": "https://nextjs.org/docs",
     "tags": ["nextjs", "docs"],
-    "type": "link"
+    "type": "link",
+    "createdAt": "2024-06-11T09:30:00.000Z",
+    "updatedAt": "2024-06-11T09:30:00.000Z"
   },
   {
     "title": "Tailwind docs",
     "content": "https://tailwindcss.com/docs",
     "tags": ["tailwind", "css"],
-    "type": "link"
+    "type": "link",
+    "createdAt": "2024-07-02T15:02:00.000Z",
+    "updatedAt": "2024-07-02T15:02:00.000Z"
   },
   {
     "title": "MongoDB connect example",
     "content": "mongoose.connect(process.env.MONGODB_URI)",
     "tags": ["mongodb", "mongoose"],
-    "type": "note"
+    "type": "note",
+    "createdAt": "2024-08-19T12:14:00.000Z",
+    "updatedAt": "2024-08-19T12:14:00.000Z"
   },
   {
     "title": "Docker run Mongo",
     "content": "docker run -d -p 27017:27017 --name mongo mongo",
     "tags": ["docker", "mongodb"],
-    "type": "command"
+    "type": "command",
+    "createdAt": "2024-09-05T17:41:00.000Z",
+    "updatedAt": "2024-09-05T17:41:00.000Z"
   },
   {
     "title": "Node.js fetch example",
     "content": "const res = await fetch('/api/data')",
     "tags": ["node", "fetch"],
-    "type": "note"
+    "type": "note",
+    "createdAt": "2025-01-10T08:55:00.000Z",
+    "updatedAt": "2025-01-10T08:55:00.000Z"
   },
   {
     "title": "Delete node_modules",
     "content": "rm -rf node_modules",
     "tags": ["npm"],
-    "type": "command"
+    "type": "command",
+    "createdAt": "2025-02-21T11:22:00.000Z",
+    "updatedAt": "2025-02-21T11:22:00.000Z"
   },
   {
     "title": "Frontend Masters",
     "content": "https://frontendmasters.com/",
     "tags": ["learning", "frontend"],
-    "type": "link"
+    "type": "link",
+    "createdAt": "2025-06-14T14:48:00.000Z",
+    "updatedAt": "2025-06-14T14:48:00.000Z"
   },
   {
     "title": "Useful regex tester",
     "content": "https://regex101.com/",
     "tags": ["tools", "regex"],
-    "type": "link"
+    "type": "link",
+    "createdAt": "2026-02-28T10:16:00.000Z",
+    "updatedAt": "2026-02-28T10:16:00.000Z"
   }
 ]

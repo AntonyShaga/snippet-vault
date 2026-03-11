@@ -1,12 +1,19 @@
 import { Module } from '@nestjs/common';
 import { SnippetsModule } from './snippets/snippets.module';
 import { MongooseModule } from '@nestjs/mongoose';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
-    MongooseModule.forRoot(
-      process.env.MONGODB_URI || 'mongodb://localhost:27017/snippet-vault',
-    ),
+    ConfigModule.forRoot({
+      isGlobal: true,
+      envFilePath: '.env',
+    }),
+
+    MongooseModule.forRoot(process.env.MONGODB_URI || 'mongodb://localhost:27017', {
+      dbName: 'snippet-vault',
+    }),
+
     SnippetsModule,
   ],
 })

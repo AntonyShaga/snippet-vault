@@ -3,6 +3,12 @@ import fs from 'fs';
 import path from 'path';
 import { SnippetSchema } from '../snippets/schemas/snippet.schema';
 
+interface Snippet {
+  title: string;
+  content: string;
+  tags?: string[];
+}
+
 async function run() {
   const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/snippet-vault';
 
@@ -23,7 +29,7 @@ async function run() {
   const filePath = path.join(__dirname, '../../seed/snippets.json');
 
   const raw = fs.readFileSync(filePath, 'utf-8');
-  const data = JSON.parse(raw);
+  const data = JSON.parse(raw) as Snippet[];
 
   await SnippetModel.insertMany(data);
 

@@ -42,7 +42,7 @@ snippet-vault
 
 # Backend Setup
 
-Start MongoDB locally first.
+Make sure MongoDB is running locally or provide a MongoDB Atlas connection string.
 
 Then run the backend:
 
@@ -99,22 +99,15 @@ http://localhost:3001
 
 ---
 
-# Frontend via Vercel
+# Live Demo
 
-The frontend is also deployed on **Vercel**.
+Frontend:
 
-You can open the application directly using the Vercel link.
+https://snippet-vault-bice.vercel.app/
 
-https://LINK.vercel.app
+Backend API:
 
-⚠️ Even when using the Vercel frontend, the **backend must still be running locally**.
-
-Make sure the backend is started:
-
-```
-cd backend
-npm run dev
-```
+https://snippet-vault-3mh3.vercel.app/
 
 ---
 
@@ -135,7 +128,7 @@ backend/.env.example
 
 ---
 
-# API Examples
+# API Endpoints
 
 Get all snippets
 
@@ -177,6 +170,8 @@ DELETE /snippets/:id
 
 # Notes
 
-* No authentication is implemented (as specified in the task requirements).
-* The project focuses on clean CRUD API, search, filtering and pagination.
-* Demo seed data is included to make testing easier.
+Authentication is intentionally not implemented (not required in the assignment).
+
+The project focuses on clean CRUD architecture and full-stack integration.
+
+MongoDB Atlas is used as the production database.
