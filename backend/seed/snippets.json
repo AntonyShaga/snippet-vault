@@ -1,0 +1,92 @@
+[
+  {
+    "title": "React useEffect example",
+    "content": "useEffect(() => { console.log('Component mounted') }, [])",
+    "tags": ["react", "hooks"],
+    "type": "note"
+  },
+  {
+    "title": "React useState example",
+    "content": "const [count, setCount] = useState(0)",
+    "tags": ["react", "hooks"],
+    "type": "note"
+  },
+  {
+    "title": "Git reset hard",
+    "content": "git reset --hard HEAD",
+    "tags": ["git"],
+    "type": "command"
+  },
+  {
+    "title": "Git undo last commit",
+    "content": "git reset --soft HEAD~1",
+    "tags": ["git"],
+    "type": "command"
+  },
+  {
+    "title": "Install NestJS CLI",
+    "content": "npm i -g @nestjs/cli",
+    "tags": ["nestjs", "npm"],
+    "type": "command"
+  },
+  {
+    "title": "Create new NestJS project",
+    "content": "nest new project-name",
+    "tags": ["nestjs"],
+    "type": "command"
+  },
+  {
+    "title": "Useful CSS tricks",
+    "content": "https://css-tricks.com/",
+    "tags": ["css", "frontend"],
+    "type": "link"
+  },
+  {
+    "title": "Next.js documentation",
+    "content": "https://nextjs.org/docs",
+    "tags": ["nextjs", "docs"],
+    "type": "link"
+  },
+  {
+    "title": "Tailwind docs",
+    "content": "https://tailwindcss.com/docs",
+    "tags": ["tailwind", "css"],
+    "type": "link"
+  },
+  {
+    "title": "MongoDB connect example",
+    "content": "mongoose.connect(process.env.MONGODB_URI)",
+    "tags": ["mongodb", "mongoose"],
+    "type": "note"
+  },
+  {
+    "title": "Docker run Mongo",
+    "content": "docker run -d -p 27017:27017 --name mongo mongo",
+    "tags": ["docker", "mongodb"],
+    "type": "command"
+  },
+  {
+    "title": "Node.js fetch example",
+    "content": "const res = await fetch('/api/data')",
+    "tags": ["node", "fetch"],
+    "type": "note"
+  },
+  {
+    "title": "Delete node_modules",
+    "content": "rm -rf node_modules",
+    "tags": ["npm"],
+    "type": "command"
+  },
+  {
+    "title": "Frontend Masters",
+    "content": "https://frontendmasters.com/",
+    "tags": ["learning", "frontend"],
+    "type": "link"
+  },
+  {
+    "title": "Useful regex tester",
+    "content": "https://regex101.com/",
+    "tags": ["tools", "regex"],
+    "type": "link"
+  }
+]
